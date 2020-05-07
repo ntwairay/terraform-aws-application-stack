@@ -1,8 +1,3 @@
-provider "aws" {
-  version = "~> 2.11.0"
-  region  = "ap-southeast-2"
-}
-
 data "aws_ami" "ubuntu" {
   most_recent = true
 

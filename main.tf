@@ -15,7 +15,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "app" {
-  ami           = "${data.aws_ami.ubuntu.id}"
+  ami           = data.aws_ami.ubuntu.id
   instance_type = var.compute.app.instance_type
 
   tags = {
@@ -26,7 +26,7 @@ resource "aws_instance" "app" {
 
 
 resource "aws_instance" "worker" {
-  ami           = "${data.aws_ami.ubuntu.id}"
+  ami           = data.aws_ami.ubuntu.id
   instance_type = var.compute.worker.instance_type
 
   tags = {
